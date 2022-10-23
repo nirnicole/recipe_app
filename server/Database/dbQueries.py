@@ -23,7 +23,13 @@ def insert_record(record):
     except TypeError as e:
         print(e)
 
-
+def ing_exist(table, column, val):
+    cur = connection.cursor()
+    cur.execute(f"SELECT {column} FROM {table} WHERE {column} = '{val}' LIMIT 1")
+    if cur.fetchone():
+        return True
+    else:
+        return False
 
 
 
