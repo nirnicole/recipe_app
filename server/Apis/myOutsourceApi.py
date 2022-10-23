@@ -14,6 +14,7 @@ class MyOutsourceApi(Api):
         self.method = method
         return super().make_call()
 
+    #note, make it more pythonic later
     def proccess_data(self, isGluten=False, isDiary=False):
 
         recipe_table = [{

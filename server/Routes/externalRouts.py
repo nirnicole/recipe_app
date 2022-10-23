@@ -1,6 +1,5 @@
 from fastapi import APIRouter, Response
 from Routes import errorHandling
-from Database import dbQueries
 from Apis.myOutsourceApi import MyOutsourceApi
 
 EXTERNAL_PLAYERS_API_BASE_URL = "https://recipes-goodness.herokuapp.com/"

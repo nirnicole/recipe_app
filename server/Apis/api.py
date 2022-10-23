@@ -13,9 +13,6 @@ class Api:
         final_url = self.url + self.resources
 
         if self.method == "GET": 
-            print("get!")
-            print(final_url)
-            print(self.headers)
             response = requests.get(final_url, self.headers)
         elif self.method == "POST":
             pass

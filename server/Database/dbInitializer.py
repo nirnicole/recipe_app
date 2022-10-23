@@ -14,6 +14,7 @@ try:
 except Exception: 
     print("data base already exists!")
 
+# create tables
 try:
     initial_connection = pymysql.connect(
     host="localhost",
@@ -32,8 +33,8 @@ try:
 except Exception: 
     print("tables already exists!")
 
+#add ingridients:
 try:
-    #INGRIDIENTS:
     initial_connection = pymysql.connect(
         host="localhost",
         user="root",
@@ -42,31 +43,31 @@ try:
         charset="utf8",
         cursorclass=pymysql.cursors.DictCursor
     )
-    # with initial_connection.cursor() as cursor:
-    #     print("inserting values...")
-    #     dairy_ingredients = ["Cream","Cheese","Milk","Butter","Creme","Ricotta","Mozzarella","Custard","Cream Cheese"]
-    #     gluten_ingredients = ["Flour","Bread","spaghetti","Biscuits","Beer"]
-    #     for dairy in dairy_ingredients:
-    #         cursor.execute(f"INSERT IGNORE INTO dairy(dairy_ingredients) values('{dairy}')")
-    #         initial_connection.commit()
+    with initial_connection.cursor() as cursor:
+        print("inserting values...")
+        dairy_ingredients = ["Cream","Cheese","Milk","Butter","Creme","Ricotta","Mozzarella","Custard","Cream Cheese"]
+        gluten_ingredients = ["Flour","Bread","spaghetti","Biscuits","Beer"]
+        for dairy in dairy_ingredients:
+            cursor.execute(f"INSERT IGNORE INTO dairy(dairy_ingredients) values('{dairy}')")
+            initial_connection.commit()
 
-    #     get_number = f"SELECT * FROM dairy"
-    #     print(get_number)
-    #     cursor.execute(get_number)
-    #     result = cursor.fetchall()
-    #     print(result)
+        get_number = f"SELECT * FROM dairy"
+        print(get_number)
+        cursor.execute(get_number)
+        result = cursor.fetchall()
+        print(result)
 
-    #     for gluten in gluten_ingredients:
-    #         cursor.execute(f"INSERT IGNORE INTO gluten(gluten_ingredients) values('{gluten}')")   
-    #         initial_connection.commit()
+        for gluten in gluten_ingredients:
+            cursor.execute(f"INSERT IGNORE INTO gluten(gluten_ingredients) values('{gluten}')")   
+            initial_connection.commit()
 
-    #     get_number = f"SELECT * FROM gluten"
-    #     print(get_number)
-    #     cursor.execute(get_number)
-    #     result = cursor.fetchall()
-    #     print(result)    
+        get_number = f"SELECT * FROM gluten"
+        print(get_number)
+        cursor.execute(get_number)
+        result = cursor.fetchall()
+        print(result)    
             
-    #     print("Done!")    
+        print("Done!")    
 except Exception: 
     print(Exception.args[0])
     print("coudlnt insert values!")

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 import uvicorn
-# from Database import dbInitializer            #do not delete!
+# from Database import dbInitializer            #do not delete! uncomment when loading for the first time
 from Routes import externalRouts
 from Routes import internalRouts
 
