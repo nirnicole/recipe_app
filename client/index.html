@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<link rel="shortcut icon" href="#" />
-		<title>NBA Project</title>
+		<title>Recepies Project</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
 		<script
@@ -17,40 +17,16 @@
 			media="screen"
 			href="styles.css"
 		/>
-
-		<!-- <script id="card-template" type="text/x-handlebars-template">
-			<div
-				class={{chooseClass this.dreamTeam}}
-				data-id={{this.id}}
-				data-dt={{this.dreamTeam}}
-				data-json={{this}}
-				data-fname={{this.fname}}
-				data-lname={{this.lname}}
-			>
-				<div class="fullName">
-					{{this.lname}}
-					{{this.fname}}
-				</div>
-				<div class="jersey">{{this.jersey}}</div>
-				<div class="img" id={{this.id}} data-stats="false"></div>
-				<div class="position">{{this.position}}</div>
-				<button class="dreamteam-card-button">{{dreamOptions
-						this.dreamTeam
-					}}</button>
-				<button class="stats-button">Stats</button>
-			</div>
-		</script> -->
-
 		<script id="results-template" type="text/x-handlebars-template">
 			{{#each results}}
 				<div id="card{{this.id}}" class="item">
 					<div class="img" id={{this.id}} data-stats="false"></div>
-					<div class="fullName">
+					<div class="title">
 						<h1>
 							{{this.title}}
 						</h1>
 					</div>
-					<div class="position">
+					<div class="ings">
 						<h2>     ingredients:</h2>
 							<ul>
 								{{#each this.ingredients}}
