@@ -19,9 +19,9 @@ enjoy!
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/54746985/196617872-454155e0-02a8-49aa-b8b5-a8fba7c1930e.png)
+![image](https://user-images.githubusercontent.com/54746985/197386164-a6bf90a0-980e-4f98-bea0-3a327f20e69d.png)
 
 ## Direct-Link
 
 To see the final prodect up and running,
-[Click Here](https://nirnicole.github.io/example-project/)
+[Click Here](https://nirnicole.github.io/recipe_app/)
