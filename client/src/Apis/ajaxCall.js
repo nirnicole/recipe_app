@@ -2,7 +2,7 @@ class AjaxCall {
 	async getApi(url, method = "GET", apidata = "empty", resourcses = "") {
 		let ajaxData = {
 			url: url + resourcses,
-			data: { "data": apidata },
+			data: apidata,
 			success: (result) => result,
 			error: (result) => "error",
 			type: method,

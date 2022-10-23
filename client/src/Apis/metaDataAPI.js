@@ -5,7 +5,11 @@ class MetaDataApi extends Api {
 	}
 
 	async getData(itemId = "cheese", gluten = false, dairy = true) {
-		this.resources = itemId + `?gluten=${gluten}&dairy=${dairy}`
+		this.data = {
+			"gluten": gluten,
+			"dairy": dairy,
+		}
+		this.resources = itemId
 		return await this.callApi()
 	}
 

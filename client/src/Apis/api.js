@@ -18,16 +18,16 @@ class Api {
 		this.payload = {}
 	}
 
-	async callApi(attempts = 5, data = "") {
+	async callApi(attempts = 5) {
 		return await this.callerInteface
-			.getApi(this.url, this.method, data, this.resources)
+			.getApi(this.url, this.method, this.data, this.resources)
 			.catch((error) => {
 				console.log(error)
-				this.errorHandeler(this.callApi, attempts, data)
+				this.errorHandeler(this.callApi, attempts)
 			})
 	}
 
-	errorHandeler(method, attempts, data = { "data": data }) {
+	errorHandeler(method, attempts, data = "") {
 		if (attempts-- > 0) {
 			console.warn(`error in : ${this.constructor.name} \n
                         Attampts left: ${attempts}\n
