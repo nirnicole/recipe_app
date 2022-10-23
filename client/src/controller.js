@@ -2,12 +2,8 @@
   Author: Nir Nicole
 */
 
-const model = rupgModel()
-const renderer = rupgRender()
-
-Handlebars.registerHelper("chooseClass", (isPressed) =>
-	isPressed ? "dt-item" : "item"
-)
+const model = recipeModel()
+const renderer = recipeRender()
 
 const generateData = function (attempts, user_input, gluten, dairy) {
 	model
@@ -31,23 +27,6 @@ $("body").bind("keypress", function (event) {
 		$("#submit").trigger("click")
 	}
 })
-
-// $("#results").on("click", ".dreamteam-card-button", function () {
-// 	let isDreamTeam = $(this).parent("div").attr("data-dt")
-// 	let player_id = $(this).parent("div").attr("data-id")
-// 	let player_data = model.getCache().find((p) => p.id == player_id)
-// 	model.initDreamTeam()
-
-// 	if (String(isDreamTeam).toLowerCase() == "true") {
-// 		model
-// 			.deletePlayer(player_id)
-// 			.then((res) => renderer.renderCard(player_id, res.metaData))
-// 	} else {
-// 		model
-// 			.addPlayer(player_data)
-// 			.then((res) => renderer.renderCard(player_id, res.metaData))
-// 	}
-// })
 
 let errorHandeling = function (error, attempts, callback) {
 	console.warn(error)

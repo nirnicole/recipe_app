@@ -9,11 +9,13 @@ class MetaDataApi extends Api {
 		return await this.callApi()
 	}
 
+	//restful extention, not fully implemented
 	async postData(data = "") {
 		this.method = "POST"
 		return await this.callApi(5, data)
 	}
 
+	//restful extention, not fully implemented
 	async deleteData(data = "") {
 		this.method = "DELETE"
 		this.resources = data

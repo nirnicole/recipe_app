@@ -1,7 +1,7 @@
 /*
   Author: Nir Nicole
 */
-const rupgRender = function () {
+const recipeRender = function () {
 	const renderComponent = function (hbTemplate, elementToRender, metaData) {
 		const source = $(hbTemplate).html()
 		const template = Handlebars.compile(source)
@@ -20,16 +20,10 @@ const rupgRender = function () {
 			renderComponent("#imgs-template", elementToRender, item)
 		}
 	}
-	const renderCard = function (pid, pdata) {
-		let elementToRender = `#card${pid}`
-		renderComponent("#card-template", elementToRender, pdata)
-		renderComponent("#imgs-template", `#${pid}`, pdata)
-	}
 
 	return {
 		renderResults,
 		renderComponent,
 		appandImgs,
-		renderCard,
 	}
 }

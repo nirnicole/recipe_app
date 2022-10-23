@@ -1,7 +1,7 @@
 /*
   Author: Nir Nicole
 */
-const rupgModel = function () {
+const recipeModel = function () {
 	let metaInstance
 	let cacheData
 
@@ -21,6 +21,7 @@ const rupgModel = function () {
 		})
 	}
 
+	//restful extention, not fully implemented
 	async function addData(userInput) {
 		let addedPlayerPromise = metaInstance.postData(userInput)
 		return await Promise.all([addedPlayerPromise]).then(function (results) {
@@ -28,6 +29,7 @@ const rupgModel = function () {
 		})
 	}
 
+	//restful extention, not fully implemented
 	async function deleteData(userInput) {
 		let addedPlayerPromise = metaInstance.deleteData(userInput)
 		return await Promise.all([addedPlayerPromise]).then(function (results) {
