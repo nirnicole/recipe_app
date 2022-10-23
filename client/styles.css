@@ -44,19 +44,6 @@ h3{
     align-items: center;
     justify-content: center;
   }
-
-.item > .dreamteam-card-button {
-    background-color: green;
-  }
-
-.dt-item > .dreamteam-card-button {
-  background-color: red;
-  }
-
-.jersey{
-    text-align: center;
-    margin: 5px
-  }
   
 .title{
     text-align: center;
@@ -76,36 +63,6 @@ img{
 
 .img{
   position: relative;
-}
-
-/*player stats*/
-.player-stats-hide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: grey;
-  opacity: 0;
-  transition: opacity 1s linear;
-  -webkit-transition: opacity 1s linear;
-  -moz-transition: opacity 1s linear;
-  -o-transition: opacity 1s linear;}
-
-.player-stats-show {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: grey;
-  opacity: 0.95;
-  transition: opacity 1s linear;
-  -webkit-transition: opacity 1s linear;
-  -moz-transition: opacity 1s linear;
-  -o-transition: opacity 1s linear;
-  font-size: bold;
-  color:white;
 }
 
 /*inputs*/
