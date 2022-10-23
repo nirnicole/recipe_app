@@ -10,7 +10,6 @@ const recipeRender = function () {
 		$(elementToRender).append(newHTML)
 	}
 	const renderResults = function (res) {
-		console.log(res)
 		renderComponent("#results-template", "#results", res)
 		appandImgs(res.results)
 	}

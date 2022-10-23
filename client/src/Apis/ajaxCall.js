@@ -12,7 +12,6 @@ class AjaxCall {
 			ajaxData["contentType"] = "application/json"
 			ajaxData["data"] = JSON.stringify(apidata)
 		}
-		console.log(ajaxData)
 		return await $.ajax(ajaxData)
 	}
 }
