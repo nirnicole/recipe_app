@@ -14,8 +14,8 @@ enjoy!
 
 ## Featurs
 
--   one
--   two
+-   get a lot of cool recipies according to you ingredient choise!
+-   filter them to be gluten or dairy free!
 
 ## Screenshots
 
