@@ -1,0 +1,45 @@
+/*
+  Author: Nir Nicole
+*/
+const rupgModel = function () {
+	let metaInstance
+	let cacheData
+
+	function getCache() {
+		return cacheData
+	}
+
+	function initData() {
+		metaInstance = new MetaDataApi()
+	}
+
+	async function getData(userInput) {
+		let promise = metaInstance.getData(userInput)
+		return await Promise.all([promise]).then(function (results) {
+			cacheData = results[0]
+			return results[0]
+		})
+	}
+
+	async function addData(userInput) {
+		let addedPlayerPromise = metaInstance.postData(userInput)
+		return await Promise.all([addedPlayerPromise]).then(function (results) {
+			return results[0]
+		})
+	}
+
+	async function deleteData(userInput) {
+		let addedPlayerPromise = metaInstance.deleteData(userInput)
+		return await Promise.all([addedPlayerPromise]).then(function (results) {
+			return results[0]
+		})
+	}
+
+	return {
+		getCache,
+		getData,
+		initData,
+		addData,
+		deleteData,
+	}
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="shortcut icon" href="#" />
+		<title>NBA Project</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.js"
+			crossorigin="anonymous"
+		></script>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			media="screen"
+			href="styles.css"
+		/>
+
+		<!-- <script id="card-template" type="text/x-handlebars-template">
+			<div
+				class={{chooseClass this.dreamTeam}}
+				data-id={{this.id}}
+				data-dt={{this.dreamTeam}}
+				data-json={{this}}
+				data-fname={{this.fname}}
+				data-lname={{this.lname}}
+			>
+				<div class="fullName">
+					{{this.lname}}
+					{{this.fname}}
+				</div>
+				<div class="jersey">{{this.jersey}}</div>
+				<div class="img" id={{this.id}} data-stats="false"></div>
+				<div class="position">{{this.position}}</div>
+				<button class="dreamteam-card-button">{{dreamOptions
+						this.dreamTeam
+					}}</button>
+				<button class="stats-button">Stats</button>
+			</div>
+		</script> -->
+
+		<script id="results-template" type="text/x-handlebars-template">
+			{{#each playersData}}
+				<div id="card{{this.id}}">
+					<div
+						class={{chooseClass this.dreamTeam}}
+						data-id={{this.id}}
+						data-dt={{this.dreamTeam}}
+						data-json={{this}}
+						data-fname={{this.fname}}
+						data-lname={{this.lname}}
+					>
+						<div class="fullName">
+							{{this.lname}}
+							{{this.fname}}
+						</div>
+						<div class="jersey">{{this.jersey}}</div>
+						<div
+							class="img"
+							id={{this.id}}
+							data-stats="false"
+						></div>
+						<div class="position">{{this.position}}</div>
+						<button class="dreamteam-card-button">{{dreamOptions
+								this.dreamTeam
+							}}</button>
+						<button class="stats-button">Stats</button>
+					</div>
+				</div>
+			{{/each}}
+		</script>
+
+		<script id="imgs-template" type="text/x-handlebars-template">
+			<img
+				src="{{this.img}}"
+				onerror="this.src='https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png';"
+				alt="not found"
+			/><div id="stats{{this.id}}" class="player-stats-hide">Loading
+				Stats...</div>
+		</script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="active-bar">
+				<label class="switch">
+					<input type="checkbox" id="is-active" />
+					<span class="slider round"></span>
+				</label>
+				Gluten gree
+			</div>
+			<div class="active-bar">
+				<label class="switch">
+					<input type="checkbox" id="is-active" />
+					<span class="slider round"></span>
+				</label>
+				Dairy Free
+			</div>
+			<div class="text-input">
+				<input
+					id="user-input"
+					type="text"
+					placeholder="enter your serch"
+				/>
+			</div>
+			<button id="submit" class="glow-on-hover">Search</button>
+		</div>
+
+		<div class="body">
+			<div id="results"></div>
+		</div>
+		<div class="footer"></div>
+
+		<script src="./src/Apis/ajaxCall.js"></script>
+		<script src="./src/Apis/api.js"></script>
+		<script src="./src/Apis/metaDataAPI.js"></script>
+		<script src="./src/view.js"></script>
+		<script src="./src/model.js"></script>
+		<script src="./src/controller.js"></script>
+	</body>
+</html>
