@@ -14,6 +14,18 @@ body{
     grid-area: h;
 }
 
+h1{
+  font-size: 15px;
+  font-family: sans-serif;
+}
+h2{
+  font-size: 10px;
+  font-family: sans-serif;
+}
+h3{
+  font-size: 8px;
+  font-family: sans-serif;
+}
 
 #results {
     grid-area: b;
@@ -24,19 +36,9 @@ body{
   }
 
 .item {
-    border: 2px solid red;
-    background: orange;
-    color: rgb(86, 1, 1);
-    padding: 10px;
-    border-radius: 8px;
-    align-items: center;
-    justify-content: center;
-  }
-
-.dt-item {
-    border: 2px solid black;
-    background: grey;
-    color: rgb(86, 1, 1);
+    border: 2px solid rgb(170, 125, 255);
+    background: rgb(200, 255, 207);
+    color: rgb(111, 0, 81);
     padding: 10px;
     border-radius: 8px;
     align-items: center;
@@ -67,7 +69,7 @@ body{
   
 img{
   width: 100%;
-  height: 260px;
+  height: 160px;
   background-color: beige;
   border-radius: 4px;
 }
