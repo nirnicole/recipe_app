@@ -10,16 +10,14 @@ const rupgRender = function () {
 		$(elementToRender).append(newHTML)
 	}
 	const renderResults = function (res) {
-		let resObject = {
-			playersData: res.metaData,
-		}
-		renderComponent("#results-template", "#results", resObject)
-		appandImgs(res.metaData)
+		console.log(res)
+		renderComponent("#results-template", "#results", res)
+		appandImgs(res.results)
 	}
-	const appandImgs = function (metaData) {
-		for (player of metaData) {
-			let elementToRender = `#${player.id}`
-			renderComponent("#imgs-template", elementToRender, player)
+	const appandImgs = function (results) {
+		for (item of results) {
+			let elementToRender = `#${item.id}`
+			renderComponent("#imgs-template", elementToRender, item)
 		}
 	}
 	const renderCard = function (pid, pdata) {
