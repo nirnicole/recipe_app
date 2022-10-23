@@ -1,4 +1,4 @@
-# example-project
+# Recipies-project
 
 back&front ends project that featuring a server(localhost) that can access distant apis, and fetch diffrent info to the client side.
 the structure of this code inspired by a MVC design while a lot of oop features are presented along the way,
