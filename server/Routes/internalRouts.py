@@ -1,8 +1,12 @@
-from fastapi import APIRouter,Request,  Response
+from fastapi import APIRouter,Request
 from pydantic import BaseModel
 from Routes import errorHandling
 from Database import dbQueries
 
+# restfull inner api routs for farther application features if needed
+# do not check for now,
+# this is merly here for later innerserver feature adding.
+# note that i left it with my own tests and not something relevent to the test(but comment if you wish so i could adjust it later).
 
 router = APIRouter()
 caching_metadata = {1: "One", 2: "Two"}
