@@ -22,12 +22,16 @@
 				<div id="card{{this.id}}" class="item">
 					<div class="img" id={{this.id}} data-stats="false"></div>
 					<div class="title">
-						<h1>
+						<ul>
+							<h1>
 							{{this.title}}
 						</h1>
+					</ul>
 					</div>
 					<div class="ings">
-						<h2>     ingredients:</h2>
+						<ul>
+						<h2>ingredients:</h2>
+					</ul>
 							<ul>
 								{{#each this.ingredients}}
 									<h3>{{this}}</h2>
