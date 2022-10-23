@@ -1,3 +1,4 @@
+import json
 from .api import Api
 from Database import dbQueries
 
@@ -13,33 +14,41 @@ class MyOutsourceApi(Api):
         self.method = method
         return super().make_call()
 
-    def proccess_data(self, isDiary=False, isLectose=False):
-        
-        # recipe_table = [{
-        #     "idMeal": item["idMeal"],
-        #     "title": item["title"],
-        #     "strDrinkAlternate": item["strDrinkAlternate"],
-        #     "strCategory": item["strCategory"],
-        #     "strArea": item["strArea"],
-        #     "strInstructions": item["strInstructions"],
-        #     "thumbnail": item["thumbnail"],
-        #     "strTags": item["strTags"],
-        #     "href": item["href"],
-        #     "ingredients": item["ingredients"]
-        #     }
-        #     for item in self.raw_data["results"]]
+    def proccess_data(self, isGluten=False, isDiary=False):
 
         recipe_table = [{
+            "id": item["idMeal"],
             "title": item["title"],
             "thumbnail": item["thumbnail"],
             "href": item["href"],
             "ingredients": item["ingredients"]
             }
             for item in self.raw_data["results"]]
-        
-        for item in recipe_table:
-                print("added")
+        final_table = []
+        temp_table = []
 
-        # dbQueries.get_table("gluten")
+        if json.loads(isDiary.lower()):
+            for recipe in recipe_table:
+                take_recipe = True
+                for ing in recipe["ingredients"]:
+                    if dbQueries.ing_exist("dairy","dairy_ingredients", ing):
+                        take_recipe=False
+                        break
+                if take_recipe:
+                    temp_table.append(recipe)
+        else:
+            temp_table = recipe_table
 
-        return self.raw_data
+        if json.loads(isGluten.lower()):
+            for recipe in temp_table:
+                take_recipe = True
+                for ing in recipe["ingredients"]:
+                    if dbQueries.ing_exist("gluten","gluten_ingredients", ing):
+                        take_recipe=False
+                        break
+                if take_recipe:
+                    final_table.append(recipe)
+        else:
+            final_table = temp_table
+
+        return {"results": final_table} 
