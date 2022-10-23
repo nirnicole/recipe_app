@@ -13,8 +13,8 @@ const rupgModel = function () {
 		metaInstance = new MetaDataApi()
 	}
 
-	async function getData(userInput) {
-		let promise = metaInstance.getData(userInput)
+	async function getData(userInput, gluten, dairy) {
+		let promise = metaInstance.getData(userInput, gluten, dairy)
 		return await Promise.all([promise]).then(function (results) {
 			cacheData = results[0]
 			return results[0]
