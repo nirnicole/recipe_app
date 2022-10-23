@@ -42,31 +42,21 @@
 		</script> -->
 
 		<script id="results-template" type="text/x-handlebars-template">
-			{{#each playersData}}
-				<div id="card{{this.id}}">
-					<div
-						class={{chooseClass this.dreamTeam}}
-						data-id={{this.id}}
-						data-dt={{this.dreamTeam}}
-						data-json={{this}}
-						data-fname={{this.fname}}
-						data-lname={{this.lname}}
-					>
-						<div class="fullName">
-							{{this.lname}}
-							{{this.fname}}
-						</div>
-						<div class="jersey">{{this.jersey}}</div>
-						<div
-							class="img"
-							id={{this.id}}
-							data-stats="false"
-						></div>
-						<div class="position">{{this.position}}</div>
-						<button class="dreamteam-card-button">{{dreamOptions
-								this.dreamTeam
-							}}</button>
-						<button class="stats-button">Stats</button>
+			{{#each results}}
+				<div id="card{{this.id}}" class="item">
+					<div class="img" id={{this.id}} data-stats="false"></div>
+					<div class="fullName">
+						<h1>
+							{{this.title}}
+						</h1>
+					</div>
+					<div class="position">
+						<h2>     ingredients:</h2>
+							<ul>
+								{{#each this.ingredients}}
+									<h3>{{this}}</h2>
+								{{/each}}
+							</ul>
 					</div>
 				</div>
 			{{/each}}
@@ -74,25 +64,24 @@
 
 		<script id="imgs-template" type="text/x-handlebars-template">
 			<img
-				src="{{this.img}}"
+				src="{{this.thumbnail}}"
 				onerror="this.src='https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png';"
 				alt="not found"
-			/><div id="stats{{this.id}}" class="player-stats-hide">Loading
-				Stats...</div>
+			/>
 		</script>
 	</head>
 	<body>
 		<div class="header">
 			<div class="active-bar">
 				<label class="switch">
-					<input type="checkbox" id="is-active" />
+					<input type="checkbox" id="gluten-active" />
 					<span class="slider round"></span>
 				</label>
-				Gluten gree
+				Gluten free
 			</div>
 			<div class="active-bar">
 				<label class="switch">
-					<input type="checkbox" id="is-active" />
+					<input type="checkbox" id="dairy-active" />
 					<span class="slider round"></span>
 				</label>
 				Dairy Free
